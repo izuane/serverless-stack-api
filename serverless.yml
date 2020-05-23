@@ -33,7 +33,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:cognito-idp:eu-west-2:*:*"
+      Resource: "arn:aws:dynamodb:eu-west-2:*:*"
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -108,26 +108,6 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
-
-Resources:
-  GatewayResponseDefault4XX:
-    Type: 'AWS::ApiGateway::GatewayResponse'
-    Properties:
-      ResponseParameters:
-         gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-         gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
-      ResponseType: DEFAULT_4XX
-      RestApiId:
-        Ref: 'ApiGatewayRestApi'
-  GatewayResponseDefault5XX:
-    Type: 'AWS::ApiGateway::GatewayResponse'
-    Properties:
-      ResponseParameters:
-         gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
-         gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
-      ResponseType: DEFAULT_5XX
-      RestApiId:
-        Ref: 'ApiGatewayRestApi'
 
 # Create our resources with separate CloudFormation templates
 resources:
