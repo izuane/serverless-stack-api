@@ -6,8 +6,8 @@ npx aws-api-gateway-cli-test \
 --user-pool-id='eu-west-2_LkLxsh8n1' \
 --app-client-id='5o28od06glmdgj4j0bcufjoo2f' \
 --cognito-region='eu-west-2' \
---identity-pool-id='eu-west-2:306aa82e-af70-4a5e-b737-4c2b1016a471' \
---invoke-url='https://nxxzrygyo7.execute-api.eu-west-2.amazonaws.com/prod' \
+--identity-pool-id='eu-west-2:aa0a90cd-8723-4a9e-beae-fc22e167197c' \
+--invoke-url='https://fheplk9bea.execute-api.eu-west-2.amazonaws.com/prod' \
 --api-gateway-region='eu-west-2' \
 --path-template='/notes' \
 --method='POST' \
